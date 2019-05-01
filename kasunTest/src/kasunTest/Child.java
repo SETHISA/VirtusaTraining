@@ -17,14 +17,15 @@ public class Child extends Parent{
 		ownMoney.setTotalMoney(1000);
 		
 		int spentMoney=90;
+		int epf=30;
 		
 		System.out.println("Recieved from parent="+parent.getMoney());
 		
-		System.out.println("Own money="+ownMoney.getRecievedMoney());
+		System.out.println("Own money="+ownMoney.getRecievedMoney(epf));
 		
-		System.out.println("Total money="+(ownMoney.getRecievedMoney()+parent.getMoney()));
+		System.out.println("Total money="+(ownMoney.getRecievedMoney(epf)+parent.getMoney()));
 		
-		child.moneySaved((ownMoney.getRecievedMoney()+parent.getMoney())-child.moneySpend(spentMoney));
+		child.moneySaved((ownMoney.getRecievedMoney(epf)+parent.getMoney())-child.moneySpend(spentMoney));
 		
 
 
@@ -34,13 +35,13 @@ public class Child extends Parent{
 
 		
 		int spentMoney=toSpent;
-		 new Object(){
+		 new Object(){						//anonymous inner class
 			
 			
 
 			public int purches() {
 				
-				System.out.println("spent money="+spentMoney);
+				System.out.println("spent money="+spentMoney); 
 				return spentMoney;
 			}
 		}.purches();
@@ -57,7 +58,7 @@ public class Child extends Parent{
 		int saved=s;
 		class Bank{
 			public void saving() {
-				System.out.println("Saved Money(Bank)="+saved);
+				System.out.println("Saved Money(Bank)="+saved);  // method local inner class
 			}
 		}
 	
@@ -70,7 +71,7 @@ public class Child extends Parent{
 	
 	
 	
-	class MoneyEarn{
+	class MoneyEarn{		// member inner class
 		
 		private int totalMoney;
 		
@@ -80,13 +81,13 @@ public class Child extends Parent{
 			return totalMoney;
 		}
 
-		public void setTotalMoney(int totalMoney) {
+		public void setTotalMoney(int totalMoney) {			
 			this.totalMoney = totalMoney;
 		}
 
-		public int getRecievedMoney() {
+		public int getRecievedMoney(int epf) {
 			
-			recievedMoney=totalMoney/2;
+			recievedMoney=totalMoney-epf;
 			return recievedMoney;
 		}
 

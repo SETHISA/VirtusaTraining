@@ -2,7 +2,7 @@ package kasunTest;
 
 public class Parent {
 
-	private int money;
+	private int money;   // encapsulation 01
 	
 	public int getMoney() {
 		return money/2;
