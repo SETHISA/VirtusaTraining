@@ -1,7 +1,7 @@
 package com.kasun.accountDetaails;
 
-public class Account {
+public interface Account {
 	
-	public void withdraw(){}
+	public abstract void withdraw();
 
 }
