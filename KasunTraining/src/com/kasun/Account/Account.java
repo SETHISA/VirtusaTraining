@@ -1,7 +1,22 @@
 package com.kasun.Account;
 
-public interface Account {
-	
-	public abstract void withdraw();
+public class Account {
+
+
+	int withdrawCount=5;
+
+	public boolean accountWithdrawValidation(){
+		if(withdrawCount<=3){
+
+			return true;
+
+		}
+		else{
+			throw new AccountException("Withdraw count exceeded");
+		}
+	}
+
+
+	public  void withdraw(Double amount){};
 
 }

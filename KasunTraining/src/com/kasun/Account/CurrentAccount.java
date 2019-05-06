@@ -1,11 +1,7 @@
 package com.kasun.Account;
 
-public class CurrentAccount implements Account {
+public class CurrentAccount extends Account {
 
-	@Override
-	public void withdraw() {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 }
