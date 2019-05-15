@@ -1,25 +1,34 @@
 package com.example.demo.modal;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.ManyToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-public class Telephone {
+public class Project {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Integer id;
-	String number;
-	
-	@ManyToOne
-	@JoinColumn
+	String name;
+
+	@ManyToMany(mappedBy = "projects")
 	@JsonIgnore
-	Employee employee;
+	List<Employee> employees;
+
+	public List<Employee> getEmployees() {
+		return employees;
+	}
+
+	public void setEmployees(List<Employee> employees) {
+		this.employees = employees;
+	}
 
 	public Integer getId() {
 		return id;
@@ -29,21 +38,12 @@ public class Telephone {
 		this.id = id;
 	}
 
-	public String getNumber() {
-		return number;
+	public String getName() {
+		return name;
 	}
 
-	public void setNumber(String number) {
-		this.number = number;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public Employee getEmployee() {
-		return employee;
-	}
-
-	public void setEmployee(Employee employee) {
-		this.employee = employee;
-	}
-	
-	
 }

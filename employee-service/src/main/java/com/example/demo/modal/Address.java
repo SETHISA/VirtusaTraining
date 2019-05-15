@@ -3,12 +3,13 @@ package com.example.demo.modal;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;import net.bytebuddy.dynamic.loading.ClassReloadingStrategy.Strategy;
+import javax.persistence.Id;
 
 @Entity
 public class Address {
-	@Id 
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Integer id;
 	String address1;
 	String city;
